@@ -1,0 +1,23 @@
+name: 'Create Release'
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+  create_release:
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Create Release
+        id: create_release
+        uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          publish: true
+          version: ${{ github.ref }}
+          footer: '[You can find Haztrak containers in the GitHub container registry](https://github.com/orgs/USEPA/packages?repo_name=haztrak)'
