@@ -18,7 +18,6 @@ jobs:
   update_release_draft:
     permissions:
       contents: write
-      # PR write permission is required for autolabeler, otherwise read at least
       pull-requests: write
     runs-on: ubuntu-latest
     steps:

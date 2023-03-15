@@ -14,11 +14,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: inspect tag
+        run: "echo ${{  github.ref_name }}"
       - name: Create Release
         id: create_release
         uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           publish: true
-          version: ${{ github.ref }}
+          version: ${{  github.ref_name }}
           footer: '[You can find Haztrak containers in the GitHub container registry](https://github.com/orgs/USEPA/packages?repo_name=haztrak)'
