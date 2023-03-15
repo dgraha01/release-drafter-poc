@@ -1,6 +1,6 @@
 def main():
     print("hello garbage script")
-    print("this is a change from a PR")
+    print("modify something something")
 
 
 if __name__ == "__main__":
