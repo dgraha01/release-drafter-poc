@@ -22,5 +22,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           publish: true
+          commitish: refs/heads/main
           version: ${{  github.ref_name }}
           footer: '[You can find Haztrak containers in the GitHub container registry](https://github.com/orgs/USEPA/packages?repo_name=haztrak)'
